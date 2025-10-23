@@ -17,7 +17,7 @@ position: top
 # Introduction 
 While telemetry has gained more popularity in the last few years, we still see a lot of customers that are hesitant to start using it. Telemetry is still seen for many as a black box.
 
-There are already many great articles that cover the concepts and basics of telemetry. It gives great examples of what can be done and why telemetry should be used; I suggest that you have a [look at them](https://xrdocs.io/telemetry/tutorials/). However, many times people struggle when they start building their telemetry stack and it is not as easy as we may think. 
+There are already many great articles that cover the concepts and basics of telemetry. It gives great examples of what can be done and why telemetry should be used; I suggest that you have a [look at them]({{site.url}}/telemetry/tutorials/). However, many times people struggle when they start building their telemetry stack and it is not as easy as we may think. 
 
 This article is intended to share an up-to-date telemetry stack that can easily be spawn using Docker, it provides configuration example for both dial-in and dial-out streaming methods and shares a few tips and tricks to work with telemetry models and collectors.
 
@@ -100,7 +100,7 @@ The TIG stack (Telegraf - InfluxDB - Grafana) is a popular opensource telemetry 
 While InfluxDB offers its own web application for data visualization, Grafana is still used. Indeed, it offers many more options for building dashboards and alerts and can work with other data sources than InfluxDB. Using InfluxDB interface is still very valuable to explore the database and build flux queries.
 
 ## Collection methods
-There are two collection methods for telemetry. Dial-in and dial-out, it refers to which element initiates the telemetry session: the collector or the data source device. For more information on what you could choose, there is this great article from Shelly on XRdocs: [Model-Driven Telemetry: Dial-In or Dial-Out ?](https://xrdocs.io/telemetry/blogs/2017-01-20-model-driven-telemetry-dial-in-or-dial-out/)
+There are two collection methods for telemetry. Dial-in and dial-out, it refers to which element initiates the telemetry session: the collector or the data source device. For more information on what you could choose, there is this great article from Shelly on XRdocs: [Model-Driven Telemetry: Dial-In or Dial-Out ?]({{site.url}}/telemetry/blogs/2017-01-20-model-driven-telemetry-dial-in-or-dial-out/)
 
 As both methods may be used depending on your environment, both approaches will be described and used as examples. While gRPC dial-out is often easier to work with, we will show that the same result can be achieved with both.
 

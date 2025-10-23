@@ -341,7 +341,7 @@ Wed Aug  1 09:15:00.779 PDT
 Things seem to be fine, you see many paths, and they seem to be mapped to the internal databases. But the overall sensor path state is "Not Resolved" and if you check your collector, you won't see any data. 
 
 This is because of this status line: "Resolved to too many containers, max : 16". 
-The reason is that by default there is a restriction in IOS XR telemetry that only sensor paths containing up to 16 containers will be internally activated to push data out. Partially the reason was to encourage people to be [more specific](https://xrdocs.io/telemetry/tutorials/2018-02-13-filtering-in-telemetry-where-to-apply-and-why/) in what to stream out. Plus, we had the telemetry process single-threaded in 6.1.x. That's why it was decided to add a simple check in the code at the very beginning. 
+The reason is that by default there is a restriction in IOS XR telemetry that only sensor paths containing up to 16 containers will be internally activated to push data out. Partially the reason was to encourage people to be [more specific]({{site.url}}/telemetry/tutorials/2018-02-13-filtering-in-telemetry-where-to-apply-and-why/) in what to stream out. Plus, we had the telemetry process single-threaded in 6.1.x. That's why it was decided to add a simple check in the code at the very beginning. 
 
 ## Removing the restriction
 

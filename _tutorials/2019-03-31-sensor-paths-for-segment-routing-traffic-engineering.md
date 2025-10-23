@@ -40,9 +40,9 @@ In the output of this command, you can see that all six of the configured polici
 
 ```sensor-path Cisco-IOS-XR-infra-xtc-agent-oper:xtc/policy-summary```
 
-(For the complete configuration of MDT, see [Configuring Model-Driven Telemetry](https://xrdocs.io/telemetry/tutorials/2016-07-21-configuring-model-driven-telemetry-mdt/) ).
+(For the complete configuration of MDT, see [Configuring Model-Driven Telemetry]({{site.url}}/telemetry/tutorials/2016-07-21-configuring-model-driven-telemetry-mdt/) ).
 
-If you use [pipeline](https://xrdocs.io/telemetry/tutorials/2018-03-01-everything-you-need-to-know-about-pipeline/) to collect that data, you can easily direct the data to InfluxDB and display it with Grafana. Just add this entry to your [metrics.json](https://xrdocs.io/telemetry/tutorials/2018-03-01-everything-you-need-to-know-about-pipeline/#pipeline-metricsjson) file in pipeline:
+If you use [pipeline]({{site.url}}/telemetry/tutorials/2018-03-01-everything-you-need-to-know-about-pipeline/) to collect that data, you can easily direct the data to InfluxDB and display it with Grafana. Just add this entry to your [metrics.json]({{site.url}}/telemetry/tutorials/2018-03-01-everything-you-need-to-know-about-pipeline/#pipeline-metricsjson) file in pipeline:
 
 ```
         {
@@ -110,7 +110,7 @@ Here is the resulting graph when I brought up my 8-node lab topology:
 
 ## SR-TE Policy Traffic
 
-The proof in the SR-TE pudding is whether or not traffic is actually getting forwarded by that policy.  I explored several different YANG models for this, but the best one ended up being one of the most common MDT sensor-paths -- good old [interface statistics](https://xrdocs.io/telemetry/tutorials/2016-10-13-using-model-driven-telemetry-mdt-for-if-mib-data/)!
+The proof in the SR-TE pudding is whether or not traffic is actually getting forwarded by that policy.  I explored several different YANG models for this, but the best one ended up being one of the most common MDT sensor-paths -- good old [interface statistics]({{site.url}}/telemetry/tutorials/2016-10-13-using-model-driven-telemetry-mdt-for-if-mib-data/)!
 
 The sensor-path for interface statistics is as follows:
 ```

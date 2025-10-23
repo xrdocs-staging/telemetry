@@ -348,7 +348,7 @@ Dec 21 15:57:09.088 m2m/mdt/go-info 0/RP0/CPU0 t14463  1201959 [mdt_go_trace_inf
 </pre>
 </div>
 
-gRPC and TPA have been covered by [Viktor](https://xrdocs.io/telemetry/tutorials/2018-03-01-everything-you-need-to-know-about-pipeline/#grpc-things-to-know-about) and [Shelly](https://xrdocs.io/telemetry/tutorials/2017-05-05-mdt-with-grpc-transport-tricks/) in previous articles.
+gRPC and TPA have been covered by [Viktor]({{site.url}}/telemetry/tutorials/2018-03-01-everything-you-need-to-know-about-pipeline/#grpc-things-to-know-about) and [Shelly]({{site.url}}/telemetry/tutorials/2017-05-05-mdt-with-grpc-transport-tricks/) in previous articles.
 
 ### I’ve got the power!
 

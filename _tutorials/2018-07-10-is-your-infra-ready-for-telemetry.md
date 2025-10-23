@@ -17,7 +17,7 @@ excerpt: >-
 {% include toc icon="table" title="Is Your Infra Ready for Telemetry?" %}
 {% include base_path %}
 
-In our previous [post](https://xrdocs.io/telemetry/tutorials/2018-06-04-ios-xr-telemetry-collection-stack-intro/) we explained how to build your Telemetry Collection Stack using open source tools, e.g. [Pipeline](https://github.com/cisco/bigmuddy-network-telemetry-pipeline), [InfluxDB](https://www.influxdata.com/time-series-platform/influxdb) and others. The installation code for the stack was also [provided](https://github.com/vosipchu/XR_TCS) for your convenience. This Telemetry Collection Stack will be used as the basis for our future use cases to be shared here, at xrdocs.io. But there is one crucial step missing before moving forward. Whenever you start the installation of the Collection Stack, you will probably ask yourself about the characteristics of the server to be used to store and process the counters.
+In our previous [post]({{site.url}}/telemetry/tutorials/2018-06-04-ios-xr-telemetry-collection-stack-intro/) we explained how to build your Telemetry Collection Stack using open source tools, e.g. [Pipeline](https://github.com/cisco/bigmuddy-network-telemetry-pipeline), [InfluxDB](https://www.influxdata.com/time-series-platform/influxdb) and others. The installation code for the stack was also [provided](https://github.com/vosipchu/XR_TCS) for your convenience. This Telemetry Collection Stack will be used as the basis for our future use cases to be shared here, at xrdocs.io. But there is one crucial step missing before moving forward. Whenever you start the installation of the Collection Stack, you will probably ask yourself about the characteristics of the server to be used to store and process the counters.
 In this post, we will try to show you the utilization of the server in our scenario. It is not meant to be a full guide to cover all possible scenarios, but it contains a pretty scaled telemetry environment, and it should give you a reasonable level of understanding on how to select your server for your telemetry needs.
 
 ## Telemetry Configuration Overview
@@ -199,7 +199,7 @@ This file contains telemetry headers and lines without counters, so, roughly it 
 
 For the test purpose, the router had sample intervals equal to five seconds for every subscription.
 Most probably, you will use longer sample intervals for your installation. The goal of the testing was to emulate a scaled (and a reasonable worst-case) scenario.
-In our tests, several subscriptions were configured to gain the benefits of [multithreading!](https://xrdocs.io/telemetry/blogs/2017-08-07-multithreading-in-mdt/)
+In our tests, several subscriptions were configured to gain the benefits of [multithreading!]({{site.url}}/telemetry/blogs/2017-08-07-multithreading-in-mdt/)
 
 With all that information about Telemetry on the router, let's move on!
 
@@ -747,7 +747,7 @@ The Management interface load stays constant as expected.
 
 ### Pipeline Throughput
 
-The final stop in the first phase of the testing is Pipeline. [Monitoring of Pipeline](https://xrdocs.io/telemetry/tutorials/2018-03-01-everything-you-need-to-know-about-pipeline/#pipeline-internal-monitoring) is essential, as this can help you to prevent situations with overloads (and hence, either drops or pushbacks to the router).
+The final stop in the first phase of the testing is Pipeline. [Monitoring of Pipeline]({{site.url}}/telemetry/tutorials/2018-03-01-everything-you-need-to-know-about-pipeline/#pipeline-internal-monitoring) is essential, as this can help you to prevent situations with overloads (and hence, either drops or pushbacks to the router).
 Whenever you install the Telemetry Collection Stack, you will have this [activated by default](https://github.com/vosipchu/XR_TCS/blob/master/IOS-XR-Telemetry-BuildUP-stack.sh#L344-L385).
 All you need is to follow the graphs.
 

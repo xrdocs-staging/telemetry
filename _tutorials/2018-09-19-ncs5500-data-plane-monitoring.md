@@ -15,7 +15,7 @@ tags:
 {% include toc icon="table" title="NCS5500 Data Plane Monitoring" %}
 {% include base_path %}
 
-Hopefully, by today you feel pretty confident with [IOS XR Telemetry basics](https://xrdocs.io/telemetry/tutorials/2016-07-21-configuring-model-driven-telemetry-mdt/), you know how [Pipeline works](https://xrdocs.io/telemetry/tutorials/2018-03-01-everything-you-need-to-know-about-pipeline/) and even started exploring IOS XR MDT with the [collection stack](https://xrdocs.io/telemetry/tutorials/2018-06-04-ios-xr-telemetry-collection-stack-intro/).
+Hopefully, by today you feel pretty confident with [IOS XR Telemetry basics]({{site.url}}/telemetry/tutorials/2016-07-21-configuring-model-driven-telemetry-mdt/), you know how [Pipeline works]({{site.url}}/telemetry/tutorials/2018-03-01-everything-you-need-to-know-about-pipeline/) and even started exploring IOS XR MDT with the [collection stack]({{site.url}}/telemetry/tutorials/2018-06-04-ios-xr-telemetry-collection-stack-intro/).
 Most probably you have one question. Is there anything beyond "Interfaces, Memory, and CPU" to monitor fast and efficiently with telemetry?
 In this post, we will go through a new group of dashboards for the Collector Stack to monitor different NPU tables in NCS5500.
 
@@ -40,7 +40,7 @@ That's why FIB also has abstractions and represented in two layers, PI (Product 
 You can also check this excellent [video](https://www.youtube.com/watch?v=8Tq4nyP2wuA) to see the flow of routes from BGP down to NPU.
 
 Initially, the idea was to start showing use cases in the top->down direction. But my co-worker Nicolas Fevrier wrote great articles about NPU tables on NCS5500, and we got many questions about NPU monitoring, so, the priority was swapped to the down->top approach.
-If you haven't yet read NCS5500 posts, go here: https://xrdocs.io/cloud-scale-networking/tutorials/.
+If you haven't yet read NCS5500 posts, go here: {{site.url}}/cloud-scale-networking/tutorials/.
 It is highly recommended for you to know the basics about those NPU tables to move on with this document.
 
 
@@ -96,12 +96,12 @@ Both sides represent the topology used in tests. This topology doesn't have all 
 To draw a topology, you need to use a specific plugin, [diagram](https://grafana.com/plugins/jdbranham-diagram-panel). You don't need to install it right away, as it was [included in the Telemetry Stack](https://github.com/vosipchu/XR_TCS/blob/master/IOS-XR-Telemetry-BuildUP-stack.sh#L432-L433) from the very beginning!
 
 In my example, I'm monitoring every table for the highest possible value (across all line cards and NPUs). I see this as a convenient way to quickly see if something is wrong on a node in your network. You can specify exact linecard and exact NPU if you want, of course.
-Also, please remember, that for LEM/LPM/FEC/ECMP-FEC you should have the same values across every NPU in your chassis (unless you're using ["Selective Route Download"](https://xrdocs.io/cloud-scale-networking/tutorials/mixing-base-and-scale-LC-in-NCS5500/)). The only table that you might want to track separately is ENCAP. ENCAP will contain unique adjacency information per every NPU.
+Also, please remember, that for LEM/LPM/FEC/ECMP-FEC you should have the same values across every NPU in your chassis (unless you're using ["Selective Route Download"]({{site.url}}/cloud-scale-networking/tutorials/mixing-base-and-scale-LC-in-NCS5500/)). The only table that you might want to track separately is ENCAP. ENCAP will contain unique adjacency information per every NPU.
 
 There is nothing exceptional with the left topology (we're just showing the current state). For the right topology, the panel will show you the difference between the two following values. So, if you have LEM entries added, it will be seen as "+N". If you have entries deleted, it will show "-M".
 
 For both sides colored background is used.
-For the left side, topology colors follow general [OOR recommendations](https://xrdocs.io/cloud-scale-networking/tutorials/2017-08-02-understanding-ncs5500-resources-s01e01/) with 80% for the "yellow" state and 95% for "red" state.
+For the left side, topology colors follow general [OOR recommendations]({{site.url}}/cloud-scale-networking/tutorials/2017-08-02-understanding-ncs5500-resources-s01e01/) with 80% for the "yellow" state and 95% for "red" state.
 For the topology on the right, you will see the white background for a stable state. The green background is used when entries are added, and red is the color for removal.
 
 Here is a short video showing you how it looks like in real life:
@@ -195,7 +195,7 @@ When oversubscription happens, the following actions are done:
 
 - Kapacitor (continually monitors the tables) will send an alert right after crossing a threshold;
 - The running Python script will get this alert, parse the name of the device under stress, connect to the Influxdb database to get information about DUS LLDP neighbors.
-- After collecting the IDs of the neighbors, the script will connect to every found neighbor and increase the ISIS metric for all interfaces leading to DUS. The connection is done using [Netmiko](https://xrdocs.io/application-hosting/tutorials/2016-08-15-netmiko-and-napalm-with-ios-xr-quick-look/). You can also use [Ansible](https://xrdocs.io/application-hosting/tutorials/2018-08-06-comprehensive-guide-to-ansible-on-ios-xr/) if you want.
+- After collecting the IDs of the neighbors, the script will connect to every found neighbor and increase the ISIS metric for all interfaces leading to DUS. The connection is done using [Netmiko]({{site.url}}/application-hosting/tutorials/2016-08-15-netmiko-and-napalm-with-ios-xr-quick-look/). You can also use [Ansible]({{site.url}}/application-hosting/tutorials/2018-08-06-comprehensive-guide-to-ansible-on-ios-xr/) if you want.
 - After updating the ISIS metric, a notification will be pushed to a Slack channel.
 - Traffic will stop flowing through DUS and start using another path, through NCS5502_center.
 

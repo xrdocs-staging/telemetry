@@ -324,7 +324,7 @@ def apply(metric):
 ```
 
 ## Interface Statistics
-There's nothing special or unique to BNG when it comes to interface statistics.  So if you're wanting to stream basic interface statistics from access and/or core-facing interfaces, use the sensor paths described in [this tutorial](https://xrdocs.io/telemetry/tutorials/2016-10-13-using-model-driven-telemetry-mdt-for-if-mib-data/). 
+There's nothing special or unique to BNG when it comes to interface statistics.  So if you're wanting to stream basic interface statistics from access and/or core-facing interfaces, use the sensor paths described in [this tutorial]({{site.url}}/telemetry/tutorials/2016-10-13-using-model-driven-telemetry-mdt-for-if-mib-data/). 
 
 ## Monitoring QoS
 Just like interface statistics, QoS statistics are not unique to BNG.  If you want to stream up-to-date information about the QoS policies applied to your BNG interfaces, look no further than the usual QoS sensor-paths:
@@ -337,4 +337,4 @@ Cisco-IOS-XR-qos-ma-oper:qos/interface-table/interface/output/service-policy-nam
 If you're already monitoring BNG with CLI, then the shift to a model-based approach is relatively straight-forward since most of the relevant models follow the CLI output in a straight-forward way.  By streaming your BNG KPIs with model-based telemetry, you'll get all the benefits of highly efficient, structured data delivered right to your collection stack.
  
 #### Acknowledgements
-Many thanks to Gurpreet for contributing his BNG expertise to this tutorial.  Check out more of the BNG team's content at [https://xrdocs.io/cnbng/](https://xrdocs.io/cnbng/).
+Many thanks to Gurpreet for contributing his BNG expertise to this tutorial.  Check out more of the BNG team's content at [{{site.url}}/cnbng/]({{site.url}}/cnbng/).

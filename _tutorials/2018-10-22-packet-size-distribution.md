@@ -14,8 +14,8 @@ position: top
 {% include toc icon="table" title="Packet Size Distribution" %}
 {% include base_path %}
 
-Let's continue our series of posts dealing with different basic use cases for IOS XR Model Driven Telemetry. In our previous post, we explained how you can get a big set of different [NPU stats from NCS5500](https://xrdocs.io/telemetry/tutorials/2018-09-19-ncs5500-data-plane-monitoring/).
-Today we will make a short overview on how you can quickly check packet size distribution in your network on any router(s)/interface(s). As before, we will use the IOS XR MDT [collection stack](https://xrdocs.io/telemetry/tutorials/2018-06-04-ios-xr-telemetry-collection-stack-intro/) that can help you quickly build your infrastructure and start testing.
+Let's continue our series of posts dealing with different basic use cases for IOS XR Model Driven Telemetry. In our previous post, we explained how you can get a big set of different [NPU stats from NCS5500]({{site.url}}/telemetry/tutorials/2018-09-19-ncs5500-data-plane-monitoring/).
+Today we will make a short overview on how you can quickly check packet size distribution in your network on any router(s)/interface(s). As before, we will use the IOS XR MDT [collection stack]({{site.url}}/telemetry/tutorials/2018-06-04-ios-xr-telemetry-collection-stack-intro/) that can help you quickly build your infrastructure and start testing.
 
 ## What is it all about?
 
@@ -25,7 +25,7 @@ Usually one can be interested in that topic for some reasons, such as to get a b
 
 How to get this information? The first simple way is to get the total number of bytes, the total number of packet and divide. Sounds easy, but this approach lacks the level of granularity you would probably want. 
 
-Another option is to use [Netflow](https://en.wikipedia.org/wiki/NetFlow) or [IPFIX](https://en.wikipedia.org/wiki/IP_Flow_Information_Export). But Telemetry today can't substitute Netflow. Yes, one can find MDT [YANG models for Netflow](https://github.com/YangModels/yang/tree/master/vendor/cisco/xr/632), but they will just push Netflow operational data. (Netflow is still very helpful! If you want to read more about Netflow, please, jump [here](https://xrdocs.io/cloud-scale-networking/tutorials/2018-02-19-netflow-sampling-interval-and-the-mythical-internet-packet-size/) and read nice articles from [Nicolas](https://www.linkedin.com/in/nfevrier/)!)
+Another option is to use [Netflow](https://en.wikipedia.org/wiki/NetFlow) or [IPFIX](https://en.wikipedia.org/wiki/IP_Flow_Information_Export). But Telemetry today can't substitute Netflow. Yes, one can find MDT [YANG models for Netflow](https://github.com/YangModels/yang/tree/master/vendor/cisco/xr/632), but they will just push Netflow operational data. (Netflow is still very helpful! If you want to read more about Netflow, please, jump [here]({{site.url}}/cloud-scale-networking/tutorials/2018-02-19-netflow-sampling-interval-and-the-mythical-internet-packet-size/) and read nice articles from [Nicolas](https://www.linkedin.com/in/nfevrier/)!)
 
 So, there should be some better way. The easiest one is, probably, to use what you have already, by default, and without any configuration involved. 
 Yes, I'm talking about interface controller stats!
@@ -124,7 +124,7 @@ telemetry model-driven
 !
 ```
 
-After you specified that sensor path and configured the destination group and subscription, you will have this information pushed out from the router ([check here how to quickly find out the information to be streamed!](https://xrdocs.io/telemetry/tutorials/2018-08-07-how-to-check-what-will-be-streamed/)):
+After you specified that sensor path and configured the destination group and subscription, you will have this information pushed out from the router ([check here how to quickly find out the information to be streamed!]({{site.url}}/telemetry/tutorials/2018-08-07-how-to-check-what-will-be-streamed/)):
 
 <div class="highlighter-rouge">
 <pre class="highlight">

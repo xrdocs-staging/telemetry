@@ -18,7 +18,7 @@ excerpt: >-
 Have you ever asked yourself about how you can check what data will be pushed from your router if you configure one sensor path or another? Usually, you would end up with a four-step approach: 
 - step one: find the right YANG model 
 - step two: MDT configuration on your router (the destination, sensor path, and subscription configurations)
-- step three: install Pipeline and configure [the "dump" mode](https://xrdocs.io/telemetry/tutorials/2018-03-01-everything-you-need-to-know-about-pipeline/#pipeline-out-to-dumptxt), where you will get a text file with all the counters in JSON format. 
+- step three: install Pipeline and configure [the "dump" mode]({{site.url}}/telemetry/tutorials/2018-03-01-everything-you-need-to-know-about-pipeline/#pipeline-out-to-dumptxt), where you will get a text file with all the counters in JSON format. 
 - step four: start Pipeline, get data streamed, open the file and, finally, start the analysis. 
 
 Even if today you can do that procedure easily with your eyes closed, it might be not the best way! In this post we will talk about a more elegant way of doing a quick check of data to be streamed from your box. 
@@ -67,7 +67,7 @@ Now, run this exec-mode command on your router:
 
 To stop the script running, you just need to hit any key (otherwise, you will see counters on the screen every sample interval configured)
 
-Let's do a quick example. Following the [previous post](https://xrdocs.io/telemetry/tutorials/2018-08-01-going-above-16-containers-per-path/), I've decided to stay with the "Cisco-IOS-XR-bundlemgr-oper.yang" model here as well. To make the example short, this path was used: "Cisco-IOS-XR-bundlemgr-oper:bundles-adjacency/nodes/node/brief". Here is how the script was started:
+Let's do a quick example. Following the [previous post]({{site.url}}/telemetry/tutorials/2018-08-01-going-above-16-containers-per-path/), I've decided to stay with the "Cisco-IOS-XR-bundlemgr-oper.yang" model here as well. To make the example short, this path was used: "Cisco-IOS-XR-bundlemgr-oper:bundles-adjacency/nodes/node/brief". Here is how the script was started:
 
 ```
 RP/0/RP0/CPU0:NCS5501#run mdt_exec -s Cisco-IOS-XR-bundlemgr-oper:bundles-adjacency/nodes/node/brief -c 10000
@@ -217,7 +217,7 @@ In the next sections a few more details will be covered.
 
 ## Checking a path with several containers
 
-It is important to think about the depth of your sensor path. In the [previous post](https://xrdocs.io/telemetry/tutorials/2018-08-01-going-above-16-containers-per-path/) we talked about the depth of paths and how to make Telemetry working even if there are more than 16 containers contained. 
+It is important to think about the depth of your sensor path. In the [previous post]({{site.url}}/telemetry/tutorials/2018-08-01-going-above-16-containers-per-path/) we talked about the depth of paths and how to make Telemetry working even if there are more than 16 containers contained. 
 It is expected, that you will want to try to check a big set of counters to see what you can get from one model or another. The probability that you meet 16 containers limit is pretty high. That's why it might be needed for you to configure this command:
 
 ```
